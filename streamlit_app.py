@@ -3,38 +3,22 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 """
-# Welcome to Streamlit!
-
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
-
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
+연습중
 """
-a = 3
-b = 3
-a + b
+import os
 
-# with st.echo(code_location='below'):
-#     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
-#     num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
+if os.name == 'nt':
+    font_family = "Malgun Gothic"
+else:
+    font_family = "AppleGothic"
+    
+sns.set(font=font_family, rc={"axes.unicode_minus" : False })
 
-#     Point = namedtuple('Point', 'x y')
-#     data = []
+from IPython.display import set_matplotlib_formats
 
-#     points_per_turn = total_points / num_turns
-
-#     for curr_point_num in range(total_points):
-#         curr_turn, i = divmod(curr_point_num, points_per_turn)
-#         angle = (curr_turn + 1) * 2 * math.pi * i / points_per_turn
-#         radius = curr_point_num / total_points
-#         x = radius * math.cos(angle)
-#         y = radius * math.sin(angle)
-#         data.append(Point(x, y))
-
-#     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
-#         .mark_circle(color='#0068c9', opacity=0.5)
-#         .encode(x='x:Q', y='y:Q'))
+set_matplotlib_formats("retina")
