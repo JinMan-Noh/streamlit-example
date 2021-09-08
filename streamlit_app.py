@@ -16,8 +16,3 @@ if os.name == 'nt':
 else:
     font_family = "AppleGothic"
     
-sns.set(font=font_family, rc={"axes.unicode_minus" : False })
-
-from IPython.display import set_matplotlib_formats
-
-set_matplotlib_formats("retina")
